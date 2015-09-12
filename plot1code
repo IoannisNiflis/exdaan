@@ -1,0 +1,13 @@
+>household_power_consumption <- read.csv("household_power_consumption.txt", sep=";")
+
+>selectedDates = c("1/2/2007", "2/2/2007")
+
+>selection_hpc_file = household_power_consumption[household_power_consumption$Date %in% selectedDates,]
+
+>globalActivePower = as.numeric(selection_hpc_file$Global_active_power)
+
+>png("plot1.png", width=480, height=480)
+
+>hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+
+>dev.off()
